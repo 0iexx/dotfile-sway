@@ -1,0 +1,68 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+configuration {
+    show-icons: false;
+    
+}
+
+* {
+    font: "JetBrainsMono Nerd Font";
+    background-color: transparent;
+    text-color: @foreground;
+    border-radius: 10px;
+    spacing: 6px;
+}
+
+window {
+    width: 450px;
+    height: 460px;
+    padding: 25px;
+    background-color: @background;
+}
+
+inputbar {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background-color: @normal-background;
+}
+
+prompt {
+  enable: false;
+}
+
+entry {
+  placeholder-color: @normal-foreground;
+  background-color: transparent;
+}
+
+listview {
+  columns: 6;
+  background-color: transparent;
+  scrollbar: false;
+}
+
+element {
+  orientation: vertical;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: @normal-background;
+}
+
+element selected {
+  background-color: @selected-normal-background;
+}
+
+element-icon {
+  size: 200px;
+  border-radius: 14px;
+}
+
+element-text {
+  horizontal-align: 0.0;
+  padding-top: 10px;
+  font: "JetBrainsMono Nerd Font 18";
+  text-color: @normal-foreground;
+}
+
+mainbox {
+    children: [ listview ];
+}
