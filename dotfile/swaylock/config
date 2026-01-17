@@ -1,0 +1,42 @@
+# Auto-generated from pywal (~/.cache/wal/colors.sh)
+screenshots
+
+effect-blur=7x7
+effect-vignette=0.5:0.5
+
+clock
+indicator
+timestr=%H:%M
+datestr=%a, %d %b
+
+indicator-radius=200
+indicator-thickness=10
+ignore-empty-password
+show-failed-attempts
+fade-in=0.5
+
+# Colors from pywal (format: rrggbb[aa])
+inside-color=120f0d
+bs-hl-color=120f0d
+
+ring-color=615D6B
+line-color=00000000
+
+text-color=b897a6
+key-hl-color=120f0d
+separator-color=00000000
+
+inside-clear-color=120f0d
+ring-clear-color=6A3652
+
+inside-wrong-color=120f0d
+ring-wrong-color=503146
+text-wrong-color=503146
+
+inside-ver-color=00000000
+line-ver-color=615D6B
+text-ver-color=615D6B
+
+font=SF Pro Display
+font-size=70
+hide-keyboard-layout
