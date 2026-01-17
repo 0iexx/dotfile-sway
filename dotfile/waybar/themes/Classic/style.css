@@ -1,0 +1,77 @@
+@import url("file:///home/diex/.cache/wal/colors-waybar.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font Propo";
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@background,0.9);
+    border-bottom: 2px solid @color7;
+}
+
+#custom-logo,
+#mpd,
+#custom-colorpicker,
+#custom-audio-toggle,
+#pulseaudio,
+#tray,
+#language,
+#custom-power,
+#clock {
+    padding: 0 7px;
+    background: transparent;
+    color: @color7;
+}
+
+#workspaces button {
+    color: @color2;
+    background: transparent;
+}
+
+#workspaces button.focused {
+    color: @color7;
+    background: transparent;
+    border-bottom: 3px solid @color1;
+}
+
+#workspaces button:hover {
+    color: @color7;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#custom-logo {
+    color: @color4;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+#clock {
+    /*margin-right: 1px;*/
+    color: @color7;
+}
+
+#mpd {
+    color: @color5;
+}
+
+#custom-power {
+    color: @color7;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color1;
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding: 0 5px;
+}

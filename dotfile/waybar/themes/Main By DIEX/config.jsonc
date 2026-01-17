@@ -1,0 +1,175 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "output": ["DP-1","DP-3"],
+
+    
+    "modules-left": [
+        "custom/logo",
+        "sway/workspaces"
+       
+        
+    ],
+    "modules-center": [
+        "clock",
+        "custom/coffee"
+    ],
+    "modules-right": [
+        "group/utilities",
+        "mpd",
+        "group/try",
+        //"tray",
+        "custom/power"
+    ],
+
+    "sway/window": {
+       "max-length": 50
+    },
+
+    "clock": {
+        "format": "{:%I:%M%p}",
+        "format-alt": "{:%a | %d-%b | %I:%M%p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "months",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "today": "<span color='#bf616a'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "󰟎",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "default": ["",""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltrip": false
+    },
+
+    "tray": {
+
+    },
+       
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+
+    }
+
+    },
+
+    "mpd": {
+    "format": "{stateIcon} {artist} - {title} {volume}",
+    "format-disconnected": " MPD",
+    "format-stopped": "󰝛",
+    "format-paused": " {artist} - {title}",
+    "state-icons": {
+        "playing": "",
+        "paused": ""
+    },
+    "tooltip": true,
+    "tooltip-format": "{album}\n{date}",
+    "max-length": 40,
+    "on-click-right" : "mpc next",
+    "on-click": "mpc prev",
+    "on-click-middle": "mpc toggle",
+    "on-scroll-up": "mpc volume +5",
+    "on-scroll-down": "mpc volume -5"
+    },
+
+    "sway/language": {
+    "format": "{}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    },
+
+    "custom/audio-toggle": {
+    "exec": "~/.local/bin/toggle-audio.sh",
+    "on-click": "~/.local/bin/toggle-audio.sh toggle",
+    "interval": 1,
+    "tooltip": false
+    },
+
+    "custom/colorpicker": {
+    "format": "󰏘",
+    "tooltip": "Pick color",
+    "on-click": "hyprpicker -a"
+    },
+
+    "custom/logo":{
+    "format": "",
+    "on-click":"/home/diex/rofi-tree.sh"
+    },
+
+    "custom/mic-toggle":{
+    "exec" : "~/.local/bin/mic-toggle.sh",
+    "on-click" : "~/.local/bin/mic-status.sh",
+    "interval" :1,
+    "tooltip" : false
+    },
+
+    "custom/screenshot":{
+        "on-click" : "~/.local/bin/screenshoot.sh",
+        "format" :""
+    },
+
+    "group/utilities": {
+    "orientation": "horizontal",
+    "modules": [
+        "sway/language",
+        "custom/colorpicker",
+        "custom/screenshot",
+        "custom/audio-toggle",
+        "custom/mic-toggle",
+        "pulseaudio"
+    ]
+    },
+
+    "custom/coffee": {
+	"format": ""
+    },
+
+    "group/try":{
+    "orientation": "horizontal",
+    "modules": ["custom/discord"]
+    },
+
+    "custom/discord": {
+    "exec": "~/.config/waybar/discord-icon.sh",
+    "interval": 2
+   }
+}

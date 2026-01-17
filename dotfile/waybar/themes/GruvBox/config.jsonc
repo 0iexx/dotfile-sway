@@ -1,0 +1,236 @@
+[{
+    "height": 40,
+    "spacing": 5, 
+
+    "modules-left": [
+        "group/Utilities",
+        "group/workspaces",
+        "group/mpd"
+    ],
+    "modules-center": [
+        "group/windows"
+    ],
+    "modules-right": [
+        "group/cpuram",
+        "group/system"
+    ],
+
+
+    "custom/openbracket": {
+        "format": "[",
+        "tooltip": false
+    },
+    "custom/closebracket": {
+        "format": "]",
+        "tooltip": false
+    },    
+    "custom/split": {
+      "format": "|",
+      "tooltip": false
+    },
+
+    "group/Utilities":{
+        "orientation": "horizontal",
+        "modules":[
+            "custom/openbracket",
+            "custom/arch",
+            "custom/split",
+            "custom/audio-toggle",
+            "custom/themeswitcher",
+            "custom/closebracket"
+        ]
+    },
+    "custom/arch": {
+         "format": "",
+        "tooltip": false,
+         "on-click": "wofi --show drun"
+    },
+    "custom/themeswitcher":{
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprpicker -a"
+    },
+"custom/audio-toggle": {
+    "exec": "~/.local/bin/toggle-audio.sh",
+    "on-click": "~/.local/bin/toggle-audio.sh toggle",
+    "interval": 1,
+    "tooltip": false
+    },
+    "group/workspaces":{
+        "orientation": "horizontal",
+        "modules":[
+            "custom/openbracket",
+            "sway/workspaces",
+            "custom/closebracket"
+        ]
+    },
+    "group/mpd":{
+        "orientation": "horizontal",
+        "modules":[
+        "custom/openbracket",
+        "mpd",
+        "custom/closebracket"
+        ]
+    },
+    "sway/workspaces": {
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "enable-bar-scroll": true,
+        "disable-scroll-wraparound": true,
+        "active-only": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "default": "•"
+        }
+    },
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "default": "•"
+        }
+    },
+
+    "mpd": {
+    "format": "{stateIcon} {artist} - {title}",
+    "format-disconnected": " MPD",
+    "format-stopped": "󰝛",
+    "format-paused": " {artist} - {title}",
+    "state-icons": {
+        "playing": "",
+        "paused": ""
+    },
+    "tooltip": true,
+    "tooltip-format": "{album}\n{date}",
+    "max-length": 40,
+    "on-click": "mpc toggle",
+    "on-scroll-up": "mpc next",
+    "on-scroll-down": "mpc prev"
+    },
+
+
+    "group/windows": {
+        "orientation":"horizontal",
+        "modules":[
+            "custom/openbracket",
+            "sway/window",
+            "custom/closebracket"
+        ]
+    },
+    "sway/window": {
+        "format": "{app_id}", 
+        "max-length": 20,
+        "min-length": 0,
+        "all-outputs": true
+    },
+
+
+
+    "group/cpuram": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "cpu",
+            "custom/split",
+            "memory",
+            "custom/closebracket"
+        ]
+    },
+    "cpu": {
+        "format": "CPU:{usage}%",
+        "tooltip": false,
+        "interval": 2,
+        "on-click": "kitty -e btop"
+    },
+    "memory":{
+        "format": "RAM:{}%",
+        "tooltip": false,
+        "interval": 2,
+        "on-click": "kitty -e btop"
+    },
+
+    "group/brightvol": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "backlight",
+            "custom/split",
+            "wireplumber",
+            "custom/closebracket"
+        ]
+    },
+    "wireplumber": {
+        "scroll-step": 5,
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}% ",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" :", " :", " :"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "backlight": {
+        "format": "{icon}:{percent}%",
+        "format-icons": ["", "", "🌙"],
+        "on-click": "~/.config/waybar/scripts/brightness_slider.sh"  
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "clock",
+            "custom/closebracket"
+        ]
+    },
+    "clock": {
+        "format": "{:%I:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "onclick" : "kalender"
+    },
+    "custom/swaync": {
+      "format": "",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client --toggle-panel",
+      "interval": 0
+    },
+
+    "group/clock": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "clock",
+            "custom/closebracket"
+        ]
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "custom/notifications": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/notification_center.sh"
+    }
+}]
