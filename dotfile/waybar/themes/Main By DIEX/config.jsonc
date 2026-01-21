@@ -18,8 +18,7 @@
     "modules-right": [
         "group/utilities",
         "mpd",
-        "group/try",
-        //"tray",
+        "tray",
         "custom/power"
     ],
 
@@ -70,7 +69,7 @@
     },
 
     "tray": {
-
+        "spacing": 5
     },
        
     "sway/workspaces": {
@@ -94,7 +93,7 @@
     },
 
     "mpd": {
-    "format": "{stateIcon} {artist} - {title} {volume}",
+    "format": "{stateIcon} {artist} - {title}",
     "format-disconnected": " MPD",
     "format-stopped": "󰝛",
     "format-paused": " {artist} - {title}",
@@ -110,16 +109,27 @@
     "on-click-middle": "mpc toggle",
     "on-scroll-up": "mpc volume +5",
     "on-scroll-down": "mpc volume -5"
-    },
+    }, 
 
+    "group/utilities": {
+    "orientation": "horizontal",
+    "modules": [
+        "sway/language",
+        "custom/colorpicker",
+        "custom/screenshot",
+        "custom/audio-toggle",
+        "custom/mic-toggle",
+        "pulseaudio"
+        ]
+    },
     "sway/language": {
     "format": "{}",
     "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
 
     "custom/audio-toggle": {
-    "exec": "~/.local/bin/toggle-audio.sh",
-    "on-click": "~/.local/bin/toggle-audio.sh toggle",
+    "exec": "~/.config/waybar/toggle-audio.sh",
+    "on-click": "~/.config/waybar/toggle-audio.sh toggle",
     "interval": 1,
     "tooltip": false
     },
@@ -132,44 +142,25 @@
 
     "custom/logo":{
     "format": "",
-    "on-click":"/home/diex/rofi-tree.sh"
+    "on-click":"~/rofi-tree.sh"
     },
 
     "custom/mic-toggle":{
-    "exec" : "~/.local/bin/mic-toggle.sh",
-    "on-click" : "~/.local/bin/mic-status.sh",
+    "exec" : "~/.config/waybar/mic-toggle.sh",
+    "on-click" : "~/.config/waybar/mic-status.sh",
     "interval" :1,
     "tooltip" : false
     },
 
     "custom/screenshot":{
-        "on-click" : "~/.local/bin/screenshoot.sh",
+        "on-click" : "~/.config/waybar/screenshoot.sh",
         "format" :""
     },
 
-    "group/utilities": {
-    "orientation": "horizontal",
-    "modules": [
-        "sway/language",
-        "custom/colorpicker",
-        "custom/screenshot",
-        "custom/audio-toggle",
-        "custom/mic-toggle",
-        "pulseaudio"
-    ]
-    },
-
     "custom/coffee": {
-	"format": ""
-    },
+    "exec": "~/.config/waybar/time_icon.sh",
+    "interval": 60,
+    "tooltip": false
+    }
 
-    "group/try":{
-    "orientation": "horizontal",
-    "modules": ["custom/discord"]
-    },
-
-    "custom/discord": {
-    "exec": "~/.config/waybar/discord-icon.sh",
-    "interval": 2
-   }
 }
