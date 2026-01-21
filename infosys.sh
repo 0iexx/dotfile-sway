@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-#anifetch -ff /home/diex/Downloads/cr2.gif -c "--symbols braille --fg-only"
-#fastfetch --logo Trisquel
 
 clear
 tput civis
