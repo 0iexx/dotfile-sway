@@ -1,1 +1,1 @@
-My DotFiles for sway and some script tools !
+My DotFiles for Sway and some scripts tools !
