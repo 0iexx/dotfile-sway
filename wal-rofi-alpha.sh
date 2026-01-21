@@ -3,10 +3,8 @@
 WAL="$HOME/.cache/wal/colors.sh"
 OUT="$HOME/.cache/wal/colors-rofi-alpha.rasi"
 
-# تحميل ألوان pywal
 source "$WAL"
 
-# Alpha للخلفية فقط (85%)
 ALPHA="D9"
 
 cat > "$OUT" <<EOF
