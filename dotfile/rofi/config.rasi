@@ -1,0 +1,79 @@
+/* Load pywal colors */
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+/* ================= Global ================= */
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: " ";
+    drun-display-format: "{icon}  {name}";
+    font: "JetBrainsMono Nerd Font Bold 15";
+}
+
+/* ================= Window ================= */
+window {
+    width: 30%;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: @background;
+    border: 3px;
+    border-color: @foreground;
+}
+
+/* ================= Main ================= */
+mainbox {
+    spacing: 10px;
+    background-color: transparent;
+}
+
+/* ================= Input ================= */
+inputbar {
+    padding: 10px;
+    border-radius: 8px;
+    text-color: @foreground;
+}
+
+prompt {
+    enabled: true;
+    text-color: @foreground;
+}
+
+entry {
+    text-color: @foreground;
+    placeholder: "Search...";
+}
+
+/* ================= List ================= */
+listview {
+    lines: 6;
+    spacing: 6px;
+    background-color: transparent;
+}
+
+/* ================= Elements ================= */
+element {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color: @normal-foreground;
+}
+
+/* ================= Icons ================= */
+element-icon {
+    size: 24px;
+    margin: 0px 10px 0px 0px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
