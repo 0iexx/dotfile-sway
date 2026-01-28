@@ -37,7 +37,7 @@ done | rofi -dmenu \
 
 [ -z "$selection" ] && exit 0
 
-# pywal
+# pywal sync with sctipt .config/sway/conf.d/autostart.conf
 wal -i "$WALLDIR/$selection"
 pkill waybar; waybar \
   -c ~/.config/waybar/current/config.jsonc \
